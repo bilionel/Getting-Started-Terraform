@@ -28,10 +28,10 @@ variable "enable_dns_hostnames" {
     default = true
 }
 
-variable "vpc_subnet_cidr_block" {
-    type = string
-    description = "AWS vpc subnet1 cidr block"
-    default = "10.0.0.0/24"
+variable "vpc_subnets_cidr_block" {
+    type = list(string)
+    description = "cidr block for subnets in the VPC"
+    default = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 
 variable "map_public_ip_on_launch" {
