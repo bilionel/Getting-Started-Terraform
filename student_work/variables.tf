@@ -1,3 +1,9 @@
+variable "naming_prefix" {
+  type        = string
+  description = "Naming prefix for all resources"
+  default     = "globoweb"
+}
+
 variable "aws_region" {
   type        = string
   description = "AWS Region to use for resources"
@@ -22,6 +28,12 @@ variable "vpc_subnets_cidr_block" {
   default     = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 
+variable "vpc_subnet_count" {
+  type        = number
+  description = "Number of subnet to create "
+  default     = 2
+}
+
 variable "map_public_ip_on_launch" {
   type        = bool
   description = "map a public IP address for subnet instance"
@@ -32,6 +44,12 @@ variable "aws_instance_type" {
   type        = string
   description = "AWS instance type"
   default     = "t2.micro"
+}
+
+variable "instance_count" {
+  type        = number
+  description = "Number of instances to create in VPC"
+  default     = 2
 }
 
 variable "company" {
