@@ -11,9 +11,8 @@ variable "aws_region" {
 }
 
 variable "vpc_cidr_block" {
-  type        = string
+  type        = map(string)
   description = "VPC CIDR block"
-  default     = "10.0.0.0/16"
 }
 
 variable "enable_dns_hostnames" {
@@ -29,9 +28,8 @@ variable "vpc_subnets_cidr_block" {
 }
 
 variable "vpc_subnet_count" {
-  type        = number
+  type        = map(number)
   description = "Number of subnet to create "
-  default     = 2
 }
 
 variable "map_public_ip_on_launch" {
@@ -41,15 +39,13 @@ variable "map_public_ip_on_launch" {
 }
 
 variable "aws_instance_type" {
-  type        = string
+  type        = map(string)
   description = "AWS instance type"
-  default     = "t2.micro"
 }
 
 variable "instance_count" {
-  type        = number
+  type        = map(number)
   description = "Number of instances to create in VPC"
-  default     = 2
 }
 
 variable "company" {
